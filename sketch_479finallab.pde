@@ -113,6 +113,9 @@ void draw(){
   else if(tab=="bicepend"){
     bicepEndDraw();
   }
+  else if(tab=="tricepend"){
+    tricepEndDraw();
+  }
   
 }
 void serialEvent(Serial myPort){

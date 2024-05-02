@@ -2,6 +2,9 @@ long interval2 = 7000;
 long start2 = 0;
 boolean isFlexing2 = true;
 boolean isDone2 = false;
+int flexReadMax2;
+int muscleReadMax2;
+ArrayList<Integer> muscleValues2 = new ArrayList();
 
 void tricepLearnDraw(){
   pushStyle();
@@ -17,7 +20,7 @@ void tricepLearnDraw(){
       // Populate array here
     } else{
      isDone2 = true;
-      //image(bicepExtended, 200,100, 300, 300);
+      image(bicepExtended, 200,100, 300, 300);
       text ("Now relax your arm\n for a few seconds", 350, 450);
       // Populate array here
      }

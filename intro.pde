@@ -77,3 +77,10 @@ public void endLesson(GButton button, GEvent event){
     println("ending current activity\n");
   }
 }
+
+public void endLessonTricep(GButton button, GEvent event){
+  if(event == GEvent.CLICKED){
+    tab= "tricepend";
+    println("ending current activity\n");
+  }
+}
