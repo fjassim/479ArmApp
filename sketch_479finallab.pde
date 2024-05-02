@@ -17,8 +17,8 @@ import g4p_controls.*;
 
 import processing.serial.*;
 import g4p_controls.GButton;
-GButton startBtn;
-GButton leaderboard;
+GButton learn;
+GButton quiz;
 GButton w1;
 GButton w2;
 GButton w3;
@@ -33,8 +33,8 @@ Random rand = new Random();
 //eatables food = new eatables();
 Game game1= new Game();
 void setup(){
-  startBtn= new GButton(this,280,360,160,60);
-  leaderboard = new GButton(this, 280,420,160,60);
+  learn= new GButton(this,280,360,160,60);
+  quiz = new GButton(this, 280,420,160,60);
   w1= new GButton(this,240,160,230,80);
     w2 = new GButton(this, 240,260,230,80); 
   w3 = new GButton(this, 240,360,230,80); 
@@ -48,12 +48,20 @@ void setup(){
 }
 
 void draw(){
+  w1.moveTo(1000,1000);
+  w2.moveTo(1000,1000);
+  w3.moveTo(1000,1000);
+   learn.moveTo(1000,1000);
+  quiz.moveTo(1000,1000);
   if(tab=="intro"){
     intro_draw();
-  } else if(tab=="Play"){
-    play_draw();
+  } else if(tab=="learn"){
+    learn_draw();
   } else if(tab=="Leaderboard"){
     //leaderboard_draw();
+  }
+  else if (tab =="bicep"){
+    bicepDraw();
   }
   
   

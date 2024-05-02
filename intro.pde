@@ -11,30 +11,38 @@ void intro_draw(){
   
   //GButton startBtn;
   image(snakeImg,250,130, 200, 200);
-  startBtn.moveTo(280,360);
-  startBtn.setText("LEARN");
-  startBtn.addEventHandler(this,"startGame");
-  startBtn.setLocalColorScheme(GCScheme.BLUE_SCHEME);
-  startBtn.setTextBold();
-  leaderboard.moveTo(280,420);
-  leaderboard.setText("QUIZ MYSELF");
-  leaderboard.addEventHandler(this,"loadLeaderboard");
-  leaderboard.setLocalColorScheme(GCScheme.BLUE_SCHEME);
-  leaderboard.setTextBold();
+  learn.moveTo(280,360);
+  learn.setText("LEARN");
+  learn.addEventHandler(this,"startGame");
+  learn.setLocalColorScheme(GCScheme.BLUE_SCHEME);
+  learn.setTextBold();
+  quiz.moveTo(280,420);
+  quiz.setText("QUIZ MYSELF");
+  quiz.addEventHandler(this,"loadLeaderboard");
+  quiz.setLocalColorScheme(GCScheme.BLUE_SCHEME);
+  quiz.setTextBold();
   pushStyle();
 }
 
 public void startGame(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
-    tab="Play";
+    tab="learn";
     game1.restart();
     println("game started\n");
   }
 }
 
+public void bicep(GButton button, GEvent event){
+  if(event == GEvent.CLICKED){
+    tab="bicep";
+    game1.restart();
+    println("bicep\n");
+  }
+}
+
 public void loadLeaderboard(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
-    tab="Leaderboard";
+    tab="quiz";
     println("load leaderboard\n");
   }
 }
