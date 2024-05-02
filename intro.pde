@@ -43,6 +43,6 @@ public void bicep(GButton button, GEvent event){
 public void loadLeaderboard(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
     tab="quiz";
-    println("load leaderboard\n");
+    println("load quiz page\n");
   }
 }
