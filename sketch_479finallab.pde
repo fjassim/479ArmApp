@@ -29,8 +29,8 @@ PImage snakeImg;
 PImage trophyImg;
 Random rand = new Random();
 
-Player snake= new Player();
-Eatables food = new Eatables();
+//Player snake= new Player();
+//eatables food = new eatables();
 Game game1= new Game();
 void setup(){
   startBtn= new GButton(this,280,360,160,60);
@@ -53,7 +53,7 @@ void draw(){
   } else if(tab=="Play"){
     play_draw();
   } else if(tab=="Leaderboard"){
-    leaderboard_draw();
+    //leaderboard_draw();
   }
   
   

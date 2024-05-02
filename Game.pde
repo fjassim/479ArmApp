@@ -35,7 +35,7 @@ class Game{
   }
   void restart(){
     score = 0;
-    snake = new Player();
-    food= new Eatables();
+    ////snake = new Player();
+    //food= new eatables();
   }
 }
