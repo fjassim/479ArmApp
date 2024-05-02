@@ -23,6 +23,7 @@ GButton w1;
 GButton w2;
 GButton w3;
 GButton ready;
+GButton backBtn;
 
 Serial myPort;
 String tab = "intro";
@@ -30,6 +31,7 @@ PImage snakeImg;
 PImage trophyImg;
 PImage bicep;
 PImage tricep;
+PImage bicepExtended;
 Random rand = new Random();
 
 //Player snake= new Player();
@@ -42,10 +44,12 @@ void setup(){
     w2 = new GButton(this, 240,260,230,80); 
   w3 = new GButton(this, 240,360,230,80); 
   ready=new GButton(this,250,200, 230, 80);
+  backBtn = new GButton(this, 200, 320, 190, 40);
 
   snakeImg = loadImage("OIP.jpg");
   trophyImg = loadImage("trophy.png");
   bicep=loadImage("Extended_Arm.png");
+  bicepExtended = loadImage("Horizontally_Extended_Arm.png");
   tricep=loadImage("Tricep_Pull_Arm.png");
   size(700,700);
   background(255);
@@ -67,8 +71,20 @@ void draw(){
   } else if(tab=="Leaderboard"){
     //leaderboard_draw();
   }
-  else if (tab =="bicepquiz"){
+  else if (tab == "bicep"){
     bicepDraw();
+  }
+  else if (tab == "tricepLearn"){
+    tricepLearnDraw();
+  }
+  else if (tab == "tricepWorkout"){
+    tricepWorkoutDraw();
+  }
+  else if (tab == "bicepWorkout"){
+    bicepWorkoutDraw();
+  }
+  else if (tab =="bicepquiz"){
+    bicepQuizDraw();
   }else if(tab=="quiz"){
     quizDraw();
   } else if(tab=="tricep"){

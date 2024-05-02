@@ -1,31 +1,4 @@
 String Score= "";
-long interval = 500;
-long start= 0;
-//class CheckerSquare{
-//  float x,y;
-//  int size;
-  
-//  CheckerSquare(float x, float y, int size){
-//    this.x = x;
-//    this.y = y;
-//    this.size = size;
-//  }
-//}
-
-//ArrayList<CheckerSquare> squares;
-//void createSquares(){
-//  //size(400,400);
-//  squares = new ArrayList<CheckerSquare>();
-//  int squareSize=50;
-//  for(int i = 0; i < height; i+=squareSize){
-//    for(int j = 0; j <width; j+=squareSize){
-//      CheckerSquare square = new CheckerSquare(j,i,squareSize);
-//      squares.add(square);
-//    }
-//  }
-  
-//}
-
 
 
 void learn_draw(){
@@ -45,7 +18,7 @@ void learn_draw(){
   w1.setTextBold();
   w2.moveTo(240,260);
   w2.setText("Tricep Pull");
-  w2.addEventHandler(this,"startGame");
+  w2.addEventHandler(this,"tricep");
   w2.setLocalColorScheme(GCScheme.BLUE_SCHEME);
   w2.setTextBold();
   w3.moveTo(240,360);

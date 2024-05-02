@@ -1,4 +1,4 @@
-void bicepDraw(){
+void bicepQuizDraw(){
     startTime = millis(); // Record the start time for the first tab
 
   background(256,256,256); // RGB values for light blue

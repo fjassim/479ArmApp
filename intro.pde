@@ -8,6 +8,7 @@ void intro_draw(){
   w1.moveTo(1000,1000);
   w2.moveTo(1000,1000);
   w3.moveTo(1000,1000);
+  backBtn.moveTo(1000,1000);
   
   //GButton startBtn;
   image(snakeImg,250,130, 200, 200);
@@ -29,6 +30,22 @@ public void startGame(GButton button, GEvent event){
     tab="learn";
     game1.restart();
     println("game started\n");
+  }
+}
+
+public void goHome(GButton button, GEvent event){
+  if(event == GEvent.CLICKED){
+    tab="intro";
+    game1.restart();
+    println("Going Home\n");
+  }
+}
+
+public void tricep(GButton button, GEvent event){
+  if(event == GEvent.CLICKED){
+    tab="tricepLearn";
+    game1.restart();
+    println("Going to Tricep\n");
   }
 }
 
