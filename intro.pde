@@ -9,7 +9,7 @@ void intro_draw(){
   w2.moveTo(1000,1000);
   w3.moveTo(1000,1000);
   backBtn.moveTo(1000,1000);
-  
+  muscleActivity.moveTo(1000,1000);
   //GButton startBtn;
   image(snakeImg,250,130, 200, 200);
   learn.moveTo(280,360);
@@ -53,6 +53,7 @@ public void bicep(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
     tab="bicep";
     game1.restart();
+    start= millis();
     println("bicep\n");
   }
 }
@@ -61,5 +62,18 @@ public void loadLeaderboard(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
     tab="quiz";
     println("load quiz page\n");
+  }
+}
+
+public void showGraph(GButton button, GEvent event){
+  if(event == GEvent.CLICKED){
+    showgraph= !showgraph;
+    println("executing show graph\n");
+  }
+}
+public void endLesson(GButton button, GEvent event){
+  if(event == GEvent.CLICKED){
+    tab= "bicepend";
+    println("ending current activity\n");
   }
 }
