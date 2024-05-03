@@ -1,4 +1,4 @@
-int highThresholdA = 90;  // Max activity value for Sensor A //sensor A is flex sensor
+int highThresholdA = 80;  // Max activity value for Sensor A //sensor A is flex sensor
 int lowThresholdA = 30;   // Minimal activity value for Sensor A
 
 // Thresholds for Sensor B

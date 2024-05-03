@@ -21,7 +21,7 @@ void quizDraw(){
   quiz.moveTo(1000,1000);
   
   textSize(20);
-  text("There will be 3 randomly chosen exercises that you must do\n correctly within 21 seconds. Ready?", 350, 180);
+  text("There will be a randomly chosen exercises that you must do\n correctly within 21 seconds. Ready?", 350, 180);
   ready.moveTo(250,240);
   ready.setText("Start");
   ready.addEventHandler(this,"startQuiz");
@@ -31,26 +31,29 @@ void quizDraw(){
 
 public void startQuiz(GButton button, GEvent event){
   println("started quiz\n");
-  if(event == GEvent.CLICKED){
-    genExercises();
-    for(int i = 0; i<4; i++){
-      draw_exercise(randomArray[i]);
-    }
-    text("Done with exercises!\n", 350,180);
-    //tab="bicepquiz";
-  }
+ Random rand= new Random();
+ int guess = rand.nextInt(1);
+ quiztimer.reset();
+ quiztimer.start();
+ reps=0;
+ if (guess ==0){
+   tab= "tricep";
+ }
+ else{
+   tab="bicepquiz";
+ }
   
   
 }
 
-void genExercises(){
-  for (int i = 0; i < randomArray.length; i++) {
-    // Generate a random value between 1 and 2
-    randomArray[i] = (int) random(1, 3);
-    println("egenerated nums:\n");
-    println(randomArray[i]);
-  }
-}
+//void genExercises(){
+//  for (int i = 0; i < randomArray.length; i++) {
+//    // Generate a random value between 1 and 2
+//    randomArray[i] = (int) random(1, 3);
+//    println("egenerated nums:\n");
+//    println(randomArray[i]);
+//  }
+//}
 
 void draw_exercise(int i){
         startTime = millis();

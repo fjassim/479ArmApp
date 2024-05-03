@@ -10,6 +10,7 @@ import org.gicentre.utils.text.*;
 import org.gicentre.utils.*;
 import org.gicentre.utils.network.traer.animation.*;
 import org.gicentre.utils.io.*;
+import lord_of_galaxy.timing_utils.*;
 
 import gifAnimation.*;
 import java.util.*;
@@ -26,6 +27,7 @@ GButton ready;
 GButton backBtn;
 GButton muscleActivity;
 GButton endActivity;
+Stopwatch quiztimer;
 
 Serial myPort;
 String tab = "intro";
@@ -42,6 +44,7 @@ Game game1= new Game();
 void setup(){
   ourOracle= new Oracle();
   graph_setup();
+  quiztimer = new Stopwatch(this);
   learn= new GButton(this,280,360,160,60);
   quiz = new GButton(this, 280,420,160,60);
   w1= new GButton(this,240,160,230,80);
@@ -70,7 +73,7 @@ void setup(){
   for(var i: Serial.list()){
     println(i);
   }
-   myPort = new Serial(this,Serial.list()[2],9600);
+   myPort = new Serial(this,Serial.list()[3],115200);
   myPort.bufferUntil('\n');
 }
 
@@ -114,7 +117,10 @@ void draw(){
     bicepEndDraw();
   }
   else if(tab=="tricepend"){
-    tricepEndDraw();
+    bicepEndDraw();
+  }
+  else if(tab=="quizend"){
+    quizEndDraw();
   }
   
 }
@@ -125,19 +131,30 @@ void serialEvent(Serial myPort){
   String tempval = myPort.readStringUntil('\n');
   tempval= tempval.trim();
   if (tempval.contains("M:")){
-      println("here");
+     
+      println(tempval);
      int startInd= 2;
+     boolean finds= tempval.contains("F:");
+     if (!finds)return;
      int endInd= tempval.lastIndexOf("F:"); 
     
      muscleReading = Integer.valueOf(tempval.substring(startInd, endInd)); 
      flexReading= Integer.valueOf(tempval.substring(endInd+2)); 
      if(isFlexing){
       muscleValues.add(muscleReading);
-      text("Getting readings...", 400, 400);
+     
     }
     if (tab=="bicepWorkout"){
       updateSensorValues(flexReading, muscleReading);
       graph_serialEvent(muscleReading);
+    }
+    if(tab=="tricepWorkout"){
+      updateSensorValues(flexReading, muscleReading);
+      graph_serialEvent(muscleReading);
+    }
+    if(tab=="tricep" || tab=="bicepquiz"){
+      updateSensorValues(flexReading, muscleReading);
+      
     }
   }
   

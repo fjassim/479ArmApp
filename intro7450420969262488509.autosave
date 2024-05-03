@@ -37,8 +37,6 @@ public void goHome(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
     tab="intro";
     game1.restart();
-    isFlexing = true;
-    isDone=false;
     println("Going Home\n");
   }
 }
@@ -46,8 +44,6 @@ public void goHome(GButton button, GEvent event){
 public void tricep(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
     tab="tricepLearn";
-    reps=0;
-    start= millis();
     game1.restart();
     println("Going to Tricep\n");
   }
@@ -58,7 +54,6 @@ public void bicep(GButton button, GEvent event){
     tab="bicep";
     game1.restart();
     start= millis();
-    reps=0;
     println("bicep\n");
   }
 }
@@ -79,13 +74,6 @@ public void showGraph(GButton button, GEvent event){
 public void endLesson(GButton button, GEvent event){
   if(event == GEvent.CLICKED){
     tab= "bicepend";
-    println("ending current activity\n");
-  }
-}
-
-public void endLessonTricep(GButton button, GEvent event){
-  if(event == GEvent.CLICKED){
-    tab= "tricepend";
     println("ending current activity\n");
   }
 }

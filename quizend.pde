@@ -1,4 +1,4 @@
-void bicepEndDraw(){
+void quizEndDraw(){
   pushStyle();
   background(256,256,256);
   fill(0);
@@ -21,7 +21,7 @@ void bicepEndDraw(){
     float effect= 0;
     if(reps >0) effect= ((float)temp/reps)*100;
    String u="Muscle Activity Cycle: "+ (temp);
-   String v= "Reps: "+ reps;
+   String v= "Reps: "+ reps+"/"+reptoBeat;
    String w = "Workout Effectiveness: "+effect+"%" ;
    
    textSize(30);

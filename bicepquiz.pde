@@ -15,14 +15,9 @@ void bicepQuizDraw(){
   image(bicep,250,130, 200, 200);
   
   
-  int remainingTime = tabDurations[currentTab] - (millis() - startTime);
-  while(remainingTime != 0){
-  // Display the remaining time on the screen
-  textSize(32);
-  textAlign(CENTER, CENTER);
-  text("Timer: " + ceil(remainingTime / 1000.0), width/2, height/2 + 50);
-   remainingTime = tabDurations[currentTab] - (millis() - startTime);
-
-  }
+  text(quiztimer.hour() + ":" + nf(quiztimer.minute(), 2) + ":" +
+   nf(quiztimer.second(), 2) + ":" + nf(quiztimer.millis(), 3), width/2, 400);
+  text("Reps to beat ", 350,430 );
+ 
   
 }
